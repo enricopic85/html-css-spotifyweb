@@ -95,4 +95,41 @@ aside{
 main{
     overflow-y: auto;
 }
+.mgt-15{
+    margin-top: 15px;
+}
+.tac{
+    text-align: center;
+}
+.mgb-10{
+    margin-bottom: 10px;
+}
+li{
+    list-style: none;
+}
+.fa-home{
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (min-width:993px) and (max-widht:1200px) {
+    .button-header{
+        width: 100%;
+    }
+    header{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:992px) {
+    .button-header{
+        width: 100%;
+    }
+    header{
+        width: 100%;
+    }
+}
 
