@@ -89,4 +89,10 @@ aside{
 .mgl-20{
     margin-left: 20px;
 }
+.br-50{
+    border-radius: 50%;
+}
+main{
+    overflow-y: auto;
+}
 
