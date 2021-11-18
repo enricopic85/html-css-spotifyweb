@@ -41,17 +41,21 @@ footer {
     display: flex;
 }
 .foot-left,.foot-right{
-    width: 25%;
+    width: 250px;
     max-width: calc(100% / 3);
     height: 100%;
     display: flex;
     align-items: center;
 }
+ .foot-right{
+    justify-content: end;
+} 
 .foot-right input{
     height: 5px;
+    width: 30%;
 }
 .foot-center{
-    width: 50%;
+    width: 40%;
     height: 100%;
     flex-grow: 1;
     display: flex;
