@@ -38,9 +38,44 @@ header {
 footer {
     height: 80px;
     background-color: #333;
-    z-index: 1001;
+    display: flex;
+}
+.foot-left,.foot-right{
+    width: 25%;
+    max-width: calc(100% / 3);
+    height: 100%;
     display: flex;
     align-items: center;
+}
+.foot-right input{
+    height: 5px;
+}
+.foot-center{
+    width: 50%;
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.foot-img{
+    width: 50px;
+    height: 50px;
+}
+.foot-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.play-time{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.play-time input{
+    width: 70%;
+    height: 5px;
 }
 aside{
     display: flex;
@@ -82,14 +117,33 @@ aside{
     height: 100%;
     object-fit: cover;
 }
+
+.player-time{
+    display: flex;
+}
+.fs-22{
+    font-size: 22px;
+}
 .mgr-10{
     margin-right: 10px;
+}
+.mgr-20{
+    margin-right: 20px;
 }
 .recently-genere{
     text-align: center;
 }
+.mgl-30{
+    margin-left: 30px;
+}
 .mgl-20{
     margin-left: 20px;
+}
+.mgl-5{
+    margin-left: 5px;
+}
+.mgl-10{
+    margin-left: 10px;
 }
 .br-50{
     border-radius: 50%;
@@ -141,6 +195,8 @@ a{
 .bold-800{
     font-weight: 800;
 }
+
+
  /* @media screen and (min-width:993px) and (max-widht:1200px) {
 
     header{
