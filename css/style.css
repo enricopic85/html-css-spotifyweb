@@ -93,26 +93,57 @@ a{
 .aside-playlist span{
     margin-bottom: 13px;
 }
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.aside-playlist::after{
+    display: table;
+    content: "";
+    clear: both;
+}
+.user::after{
+    display: table;
+    content: "";
+    clear: both;
+}
 
-/* ----------------- */
+/* main */
+
 .spotify-top {
     display: flex;
     height: calc(100vh - 80px);
     background-color: #ccc;
 }
 
-aside {
-    background-color:black;
-    height: 100%;
-    width: 200px; 
-    overflow: hidden;
+.main-menu .yellow {
+    position: relative;
+    display: inline-block;
 }
+
+.main-menu .yellow::after {
+    position: absolute;
+    bottom: -2px;
+    left: calc(50% - 25px);
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: yellowgreen;
+}
+.main-nav{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
 
 main {
     background-color: rgb(34, 35, 38);
     height: 100%;
     width: calc(100% - 200px);
 }
+
+/* classi header */
 
 header {
     background-color: rgba(0,0,0,0.4);
@@ -122,6 +153,49 @@ header {
     height: 80px;
     display: flex;
 }
+.button-header{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.upgrade{
+    width: 200px;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* aside */
+
+aside {
+    background-color:black;
+    height: 100%;
+    width: 200px; 
+    overflow: hidden;
+}
+aside{
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+}
+.aside-img img{
+    width: 100px;
+    margin: 0 auto;
+}
+.name-playlist{
+    flex-grow: 1;
+    min-width: 150px;
+    overflow-y: auto;
+}
+
+/* footer */
 
 footer {
     height: 80px;
@@ -171,51 +245,8 @@ footer {
     width: 70%;
     height: 5px;
 }
-aside{
-    display: flex;
-    flex-direction: column;
-    color: white;
 
-}
-.aside-img img{
-    width: 100px;
-    margin: 0 auto;
-}
- .aside-up{
-     overflow: hidden;
-    /* flex-grow: 1; */
-} 
-.button-header{
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    width: 100%;
-    margin-right: 20px;
-}
-.upgrade{
-    width: 200px;
-    border-radius: 20px;
-    color: white;
-    border: 1px solid white;
-    padding: 10px 20px;
-    font-size: 12px;
-    text-align: center;
-}
-.name-playlist{
-    flex-grow: 1;
-    min-width: 150px;
-    overflow-y: auto;
-}
 
-.main-nav{
-    display: flex;
-    justify-content: center;
-    margin-top: 80px;
-}
-.row{
-    display: flex;
-    flex-wrap: wrap;
-}
 .recently-content{
     width: calc(100% / 6 - 15px);
 }
@@ -245,31 +276,24 @@ aside{
     display: flex;
 }
 
-.aside-playlist::after{
-    display: table;
-    content: "";
-    clear: both;
-}
-.user::after{
-    display: table;
-    content: "";
-    clear: both;
-}
 
 
-.main-menu .yellow {
-    position: relative;
-    display: inline-block;
+/* effetti hover */
+.input:hover{
+    background-color: yellow;
 }
 
-.main-menu .yellow::after {
-    position: absolute;
-    bottom: -5px;
-    left: calc(50% - 25px);
-    content: "";
-    width: 50px;
-    height: 4px;
-    background: yellowgreen;
+.fa-heart:hover{
+    color: white;
+}
+.fa-folder:hover{
+    color: white;
+}
+input:hover{
+    color: yellow;
+}
+.fa-play-circle:hover{
+    transform: scale(1.50);
 }
 .upgrade:hover{
     transform: scale(1.25);
@@ -286,27 +310,19 @@ aside{
 .recently-img:hover .play{
     display: block;
 }
-
-/* playimg {
-    display: none; 
+.navigation li a:hover{
+    color: white;
 }
-box-album:hover playimg {
-    display: block;
-} */
+.aside-playlist i:hover, .aside-playlist span:hover{
+    color: white;
+}
 
- /* @media screen and (min-width:993px) and (max-widht:1200px) {
-
-    header{
-        width: 100%;
-    }
-} */
 .recently-img:hover img{
     filter:opacity(0.4);
 }
-/* .recently-img img .play:hover{
-    display: block;
-    
-} */
+
+
+/* media query */
 
 @media screen and (min-width: 576px) and (max-width: 1199px) {
 
@@ -338,6 +354,7 @@ box-album:hover playimg {
     height: 30px;
     font-size: 12px;
     margin-top: 10px;
+    min-width: 150px;
 }
 .height{
     height: 100%;
@@ -346,16 +363,6 @@ box-album:hover playimg {
     text-decoration: chartreuse;
     text-decoration: underline;
 }
-
-
-
-
-
-/* @media screen and (min-width:769px) and (max-width:992px) {
-    header{
-        width: 100%;
-    }
-}  */
 
 @media screen and (max-width:575px) {
     .recently-content{
@@ -409,13 +416,3 @@ box-album:hover playimg {
     }
 }
 
-/* @media  screen and (max-widht:575)  {
-    .recently-content{
-        width: calc(100% / 2 - 15px);
-    }
-    
-    li{
-        display: none;
-    }
-}
- */
